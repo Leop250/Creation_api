@@ -1,0 +1,12 @@
+mariadb:
+  image: "mariadb:latest"
+  restart: 'always'
+  volumes:
+    - "./data:/var/lib/mysql/data"
+    - "./logs:/var/lib/mysql/logs"
+    - /var/docker/mariadb/conf:/etc/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: "root"
+    MYSQL_DATABASE: "heticdb"
+    MYSQL_USER: "hetic"
+    MYSQL_PASSWORD: "hetic"
